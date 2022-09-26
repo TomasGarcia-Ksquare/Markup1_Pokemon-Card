@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+            color: white;
+            background-color: rgb(145, 232, 180);
+            text-shadow: 2px 2px 8px black;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 0.1fr 2fr;
+            grid-template-rows: 0.2fr 1.8fr;
+            gap: 1px 1px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "name name"
+                "region pokemon";
+            width: 100%;
+
+        }
+
+        .name {
+            grid-area: name;
+            margin-left: 2%;
+        }
+
+        .region {
+            grid-area: region;
+            transform: rotate(180deg);
+            writing-mode: vertical-lr;
+        }
+
+        .pokemon {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: .8fr 1fr .8fr;
+            gap: 0% 0%;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "."
+                "pokemonContainer2"
+                ".";
+            grid-area: pokemon;
+
+        }
+
+        #flexBoxPokemon {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            grid-area: pokemonContainer2;
+        }
+
+        #bulbasaurImg {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-image: url("https://maurowernly.github.io/Pokedex/images/pokemons/001Bulbasaur.png");
+            height: 240px;
+            margin-right: 100px;
+        }
+
+        #statsID {
+            margin-left: 10%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .typeImg {
+            width: 8%;
+            border-radius: 2em;
+        }
+
+        #measures {
+            width: 40%;
+        }
+
+        .statsCube {
+            color: black;
+            background-color: white;
+            padding: 5px;
+            border-radius: 1em;
+            text-align: center;
+            margin-top: 15px;
+            text-shadow: none;
+        }
+
+        .statsCube.next {
+            margin-left: 15px;
+        }
+
+        .flexBoxstatsCube {
+            align-items: center;
+        }
+
+        #japName {
+            width: 80%;
+            opacity: 50%;
+            margin-left: 50px;
+        }
+
+        #poison {
+            margin-left: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="name">
+            <h3>#001</h3>
+            <h2>Bulbasaur</h2>
+        </div>
+        <div class="region">
+            <div>Región: Kanto</div>
+        </div>
+        <div class="pokemon">
+
+            <div id="flexBoxPokemon">
+                <div class="column" id="measures">
+                    <div>Height: 0,7m</div>
+                    <div>Weigth: 6,9kg</div>
+                </div>
+                <div id="bulbasaurImg">
+                    <img src="./name.png" alt="" id="japName">
+                </div>
+                <!--<img src="./001Bulbasaur.png" alt="Bulbasaur" id="bulbasaurImg">-->
+                <div class="column" id="statsID">
+                    <div class="row">
+                        <div></div>
+                        <img src="./grass.png" alt="grass" class="typeImg">
+                        <img src="./poison.png" alt="poison" class="typeImg" id="poison">
+                    </div>
+                    <h2>Base stats:</h2>
+                    <div class="column">
+                        <div class="row flexBoxstatsCube">
+                            <div class="statsCube">HP:45</div>
+                            <div class="statsCube next">ATTACK:49</div>
+                            <div class="statsCube next">DEFENSE:49</div>
+                            <div class="statsCube next">SP ATTACK:65</div>
+                        </div>
+                        <div class="row flexBoxstatsCube">
+                            <div class="statsCube">SP DEFENSE:65</div>
+                            <div class="statsCube next">SPEED:45</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
